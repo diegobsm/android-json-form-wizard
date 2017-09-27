@@ -32,7 +32,7 @@ public class GenericTextWatcher implements TextWatcher {
         JsonApi api = null;
         if(mView.getContext() instanceof JsonApi) {
             api = (JsonApi) mView.getContext();
-        } else if(mView.getContext() instanceof TintContextWrapper) {
+        } else if(mView.getContext() instanceof ContextWrapper) {
             TintContextWrapper tintContextWrapper = (TintContextWrapper) mView.getContext();
             api = (JsonApi) tintContextWrapper.getBaseContext();
         } else {
