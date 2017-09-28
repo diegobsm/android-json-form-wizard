@@ -2,7 +2,7 @@ package com.vijay.jsonwizard.customviews;
 
 import org.json.JSONException;
 
-import android.support.v7.internal.widget.TintContextWrapper;
+import android.content.ContextWrapper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -33,7 +33,7 @@ public class GenericTextWatcher implements TextWatcher {
         if(mView.getContext() instanceof JsonApi) {
             api = (JsonApi) mView.getContext();
         } else if(mView.getContext() instanceof ContextWrapper) {
-            TintContextWrapper tintContextWrapper = (TintContextWrapper) mView.getContext();
+            ContextWrapper tintContextWrapper = (ContextWrapper) mView.getContext();
             api = (JsonApi) tintContextWrapper.getBaseContext();
         } else {
             throw new RuntimeException("Could not fetch context");
